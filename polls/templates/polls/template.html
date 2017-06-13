@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ReqsCount Plots</title>
+{% extends 'base.html' %}
 
+{% block title %}ReqsCount Plots{% endblock %}
+
+{% block content %}
     {% load static %}
 
     <script type ="text/javascript" src ="{% static 'js/jquery-1.7.1.min.js' %}"></script>
@@ -13,13 +12,12 @@
 {#    {{ weatherCharts|load_charts:"lcht, acht, Hpcht, Bpcht, ccht1, ccht2" }}#}
     {{ weatherCharts|load_charts:"lcht, acht, ccht1, ccht2" }}
 
-</head>
-<body>
+{#</head>#}
+{#<body>#}
 <div id='lcht'> Chart will be rendered here </div>
 <div id='acht'> Chart will be rendered here </div>
 {#<div id='Hpcht' style='float:left'> Chart will be rendered here </div>#}
 {#<div id='Bpcht' style='float:right'> Chart will be rendered here </div>#}
 <div id='ccht1'> Chart will be rendered here </div>
 <div id='ccht2'> Chart will be rendered here </div>
-</body>
-</html>
+{% endblock %}

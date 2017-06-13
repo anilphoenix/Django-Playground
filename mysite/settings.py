@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/chart/'
+LOGIN_URL = '/login/'
 
 # Application definition
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/manzoora/Documents/Django Projects/mysite/polls/templates/dashboard',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,5 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'C:/Users/manzoora/Documents/Django Projects/mysite/polls/static/js/'
+
+STATICFILES_DIRS = (
+    'C:/Users/manzoora/Documents/Django Projects/mysite/polls/chart/js',
+)
 
 DATE_INPUT_FORMATS = ('%d-%m-%Y')

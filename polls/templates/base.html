@@ -1,0 +1,30 @@
+{#{% load staticfiles %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"#}
+{#          rel="stylesheet" media="screen">#}
+      <title>
+          {% block title %}
+          {% endblock %}
+      </title>
+</head>
+
+  <body>
+
+  <div>
+      {{ user }}
+      {% if user.is_anonymous %}
+      <a href="{% url 'login' %}">login</a>
+      {% else %}
+      <a href="{% url 'logout' %}">logout</a>
+      {% endif %}
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+{#    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>#}
+  </body>
+</html>
